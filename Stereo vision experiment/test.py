@@ -11,7 +11,7 @@ import calibration
 import time
 
 frame_rate = 120    #Camera frame rate (maximum at 120 fps)
-B = 16                 #Distance between the cameras [cm]
+B = 17                 #Distance between the cameras [cm]
 # f = 35              #Camera lense's focal length [mm]
 f = 28              #Camera lense's focal length [mm]
 # alpha = 148        #Camera field of view in the horisontal plane [degrees]
@@ -94,6 +94,10 @@ for i in range(min(len(label_left), len(label_right))):
     cv2.putText(frame_right, f'{label_right[i]}: {confidence_right[i]:.2f}: Distance {depth:.2f}', (x_min_right[i], y_min_right[i] - 5),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
     print(f'{label_left[idx]} : {depth}')             
+
+print(label_left)
+print(label_right)
+
 cv2.imshow("aa",cv2.resize(frame_right,(500,600)))
 cv2.waitKey(0)
    
